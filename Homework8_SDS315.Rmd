@@ -118,5 +118,5 @@ coef(lm_milk)
 boot_milk = do(10000)*lm(log(sales) ~ log(price), data=mosaic::resample(milk))
 confint(boot_milk, level = 0.95) %>% filter(name == 'log.price.')
 ```
-The estimated price elasticity of the demand for milk is -1.62 (meaning that for every 1% increase in the price of milk, the demand decreases by 1.62%). I determined this by fitting a power law model to the milk data set (calculating a linear model with x = log(price) and y = log(sales)) and identifying the coefficient for log(price). Based on the bootstrapped 95% confidence interval I calculated, the price elasticity is somewhere between -1.77 and -1.45.
+The estimated price elasticity of the demand for milk is -1.62 (meaning that for every 1% increase in the price of milk, the demand decreases by 1.62%). I determined this by fitting a power law model to the milk data set (calculating a linear model with x = log(price) and y = log(sales)) and identifying the coefficient for log(price). Based on the bootstrapped 95% confidence interval I calculated, the price elasticity is somewhere between -1.77 and -1.46.
 
